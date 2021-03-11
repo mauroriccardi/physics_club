@@ -149,3 +149,75 @@ class Fields:
         return wrap
     
     
+def symplectic(x0, p0, ts, fx, fp):
+    """Algoritmo di integrazione simplettica (I ord.).
+    
+        symplectic(x0, p0, ts, fx, fp) -> restituisce un array numpy, con tante colonne quante sono le componenti 
+                                          dell'array x(t), e una riga per ogni tempo t_k, con i valori previsti per
+                                          le quantità x(t) regolate dall'equazione differenziale
+                                          dX(t) / dt = f(X, t)
+                                          In questo caso X = (x, p) è formato da coordinate canoniche
+                                          e impulsi coniugati
+        
+        x0 è la condizione iniziale (array o lista di valori iniziali) per le variabili posizione; il numero 
+           di componenti di x0 viene usato per dedurre il numero di equazioni del sistema per le variabili posizione. 
+        p0 è la condizione iniziale (array o lista di valori iniziali) per le variabili posizione; il numero 
+           di componenti di p0 viene usato per dedurre il numero di equazioni del sistema per le variabili impulso. 
+        ts array numpy contenente i tempi della discretizzazione; la lunghezza di questo array sarà
+           uguale alla lunghezza della simulazione.
+        fx funzione che dà la velocità di variazione delle variabili posizione x(t); deve essere una 
+           funzione che accetta tre variabili, x p e t, la prima un array o lista di valori delle componenti 
+           di x(t) (quindi con la stessa lunghezza del vettore delle condizioni iniziali), la seconda un array 
+           o lista di valori delle componenti di p(t)e la terza uguale al tempo al quale viene calcolata la velocità.
+        fp funzione che dà la velocità di variazione delle variabili quantità di moto p(t); deve essere una 
+           funzione che accetta tre variabili, x p e t, la prima un array o lista di valori delle componenti 
+           di x(t) (quindi con la stessa lunghezza del vettore delle condizioni iniziali), la seconda un array 
+           o lista di valori delle componenti di p(t)e la terza uguale al tempo al quale viene calcolata la velocità.
+           """
+        
+    # inizializza l'array dei valori calcolati per le x
+    xs = np.zeros(shape=(len(ts), len(x0)), dtype=np.float)
+    
+    # inizializza l'array dei valori calcolati per le p
+    ps = np.zeros(shape=(len(ts), len(p0)), dtype=np.float)
+    
+    # condizione iniziale -> primo elemento dell'array
+    xs[0] = x0
+    ps[0] = p0
+    
+    i = 0
+    while i<len(ts)-1:                       # ciclo sui tempi
+        dt = ts[i+1] - ts[i]                 # ampiezza dell'intervallo di tempo (in linea di principio può essere non costante)
+        
+        # primo stadio, calcola l'impulso ausiliario al tempo intermedio
+        v1 = fp(xs[i], ps[i], ts[i])
+
+        pstar = ps[i] + v1 * dt / 2   # aggiornamento
+        
+        # secondo stadio, determina l'update della posizione anche in funzione dell'impulso ausiliario
+        v2 = fx(xs[i], pstar, ts[i])
+        xs[i+1] = xs[i] + v2 * dt
+        
+        # ultimo stadio, determina l'update definitivo della quantità di moto
+        v3 = fp(xs[i+1], pstar, ts[i])
+        ps[i+1] = pstar + v3 * dt / 2 
+        
+        i += 1
+        
+    return xs, ps
+
+
+class HamiltonianField:
+    @staticmethod
+    def double_spring(k_1, k_2, m_1, m_2):
+        
+        m = np.array([m_1, m_2])
+        def wrap_x(x, p, t):
+            return np.array(p/m)
+        
+        a = np.array([[-(k_1+k_2)/m_1, k_2/m_1], [k_2/m_2, -k_2/m_2 ]])
+        def wrap_p(x, p, t):
+            return a.dot(x)
+
+
+        return wrap_x, wrap_p
