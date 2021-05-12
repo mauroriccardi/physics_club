@@ -14,4 +14,4 @@ _Materiali del corso ordinario di fisica_
 ## Fisica moderna
 ### Meccanica ondulatoria - Meccanica quantistica
 
-* [Wavey path to the properties of matter](Wavey path to the properties of matter.html)
+* [Wavey path to the properties of matter](Wavey path to the properties of matter.html) (materiale per_lezioni tenute in inglese nell'AS 2017/2018)
