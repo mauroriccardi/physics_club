@@ -15,3 +15,4 @@ _Materiali del corso ordinario di fisica_
 ### Meccanica ondulatoria - Meccanica quantistica
 
 * [Wavey path to the properties of matter](Wavey path to the properties of matter.html) (materiale per_lezioni tenute in inglese nell'AS 2017/2018)
+* [Note: Dalla MQ alla QFT (_non terminate_)](notes-qft-2020-01.pdf)
