@@ -10,7 +10,7 @@ Pagina indice del Physics Club
 
 ## Physics Club on Summer
 
-[Vai alla pagina del _Physics Club on Summer_](Physics Club on Summer.html)
+[Vai alla pagina del _Physics Club on Summer_](Physics Club on Summer 2022.html)
 
 # Phys101
 _Materiali del corso ordinario di fisica_
