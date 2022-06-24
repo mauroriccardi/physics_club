@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Physics Club on Summer 2022</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>una-funzione-speciale</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14259,214 +14259,8 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Physics-Club-on-Summer-2022">Physics Club on Summer 2022<a class="anchor-link" href="#Physics-Club-on-Summer-2022">&#182;</a></h1><h2 id="Preliminari-di-Matematica">Preliminari di Matematica<a class="anchor-link" href="#Preliminari-di-Matematica">&#182;</a></h2><p>Qualche strumento matematico utile per i problemi di Fisica</p>
-<h3 id="Derivate">Derivate<a class="anchor-link" href="#Derivate">&#182;</a></h3>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Approssimazioni">Approssimazioni<a class="anchor-link" href="#Approssimazioni">&#182;</a></h4><p>Per una funzione $f(x)$ cerchiamo una approssimazione per $x\sim x_0$</p>
-$$
-x = x_0 + \Delta x \qquad \textrm{ con } \qquad \Delta x \sim 0
-$$<p></p>
-<p>L'approssimazione della forma più semplice ha l'aspetto di un polinomio:</p>
-$$
-f(x) = f(x_0+\Delta x) \approx a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + \dots\\
-\ \\
-= a_0 + a_1 \Delta x + a_2 \Delta x^2 + \dots
-$$<p>I puntini di sospensione rappresentano dei termini ulteriori che non esplicitiamo, se tutto va bene possiamo trascurarli se $\Delta x$ è <em>"abbastanza piccolo"</em> (termine da specificare). In generale al posto dei puntini di sospensione avremmo un termine con una potenza superiore di $\Delta x$, per esempio nel caso di una approssimazione di ordine 2 (con un polinomio di secondo grado) abbiamo:</p>
-$$
-f(x) = f(x_0+\Delta x) \approx a_0 + a_1 (x-x_0) + a_2 (x-x_0)^2 + R_3(x_0,x)
-$$<p>laddove il termine $R_3(x_0,x)$ deve rispettare queste condizioni:</p>
-$$ 
-x\rightarrow x_0 \Rightarrow\\
-\ \\
-\qquad\qquad\qquad\Rightarrow R_3(x_0,x) \rightarrow 0\\
-\qquad\qquad\qquad\Rightarrow \frac{R_3(x_0,x)}{x-x_0} \rightarrow 0\\
-\qquad\qquad\qquad\Rightarrow \frac{R_3(x_0,x)}{(x-x_0)^2} \rightarrow 0\\
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Approssimazioni-di-grado-0">Approssimazioni di grado 0<a class="anchor-link" href="#Approssimazioni-di-grado-0">&#182;</a></h4><p>Una funzione $f(x)$ si dice <strong>continua</strong> in $x=x_0$ se possiamo scrivere l'equazione seguente, che ci dà una approssimazione di $f(x)$ con una costante (vedi lezione 1)</p>
-$$
-x\sim x_0 \qquad f(x) = f(x_0) + R_1(x_0, x)\\
-\ \\
-\qquad\qquad\qquad\qquad\textrm{ dove } \qquad x\rightarrow x_0 \Rightarrow R_1(x_0, x) \rightarrow 0
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Approssimazioni-lineari-(di-grado-1)">Approssimazioni lineari (di grado 1)<a class="anchor-link" href="#Approssimazioni-lineari-(di-grado-1)">&#182;</a></h4><p>Una funzione $f(x)$ si dice <strong>derivabile</strong> in $x=x_0$ se possiamo scrivere l'equazione seguente, che ci dà una approssimazione di $f(x)$ con una retta (vedi lezione 1)</p>
-$$
-x\sim x_0 \qquad f(x) = f(x_0) + m\cdot(x-x_0) + R_2(x_0, x)\\
-\ \\
-\qquad\qquad\qquad\qquad\textrm{ dove } \qquad x\rightarrow x_0 \Rightarrow R_2(x_0, x) \rightarrow 0\\
-\ \\
-\qquad\qquad\qquad\qquad\phantom{\textrm{ dove }} \qquad \qquad \qquad \Rightarrow \frac{R_2(x_0, x)}{x-x_0} \rightarrow 0
-$$<p>In questa equazione la pendenza $m$ si chiama <strong>derivata di</strong> $f(x)$ in $x=x_0$ cioè</p>
-$$
-m = f'(x_0)
-$$<p>in notazione usuale. Ricaviamo anche la forma alternativa</p>
-$$
-\frac{f(x_0+\Delta x) - f(x_0)}{\Delta x} = \frac{\Delta f}{\Delta x}\rightarrow f'(x_0) \qquad \textrm{ per } \Delta x \rightarrow 0
-$$<p>Un'altra notazione per la derivata della funzione $f(x)$ è dovuta a Leibnitz:</p>
-$$
-f'(x) = \frac{df(x)}{dx}
-$$<p>che evidentemente ricorda un po' la forma con il rapporto incrementale che abbiamo scritto qui sopra.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Interpretazione-geometrica-(retta-tangente)">Interpretazione geometrica (retta tangente)<a class="anchor-link" href="#Interpretazione-geometrica-(retta-tangente)">&#182;</a></h5><p>La nostra approssimazione lineare ha una diretta interpretazione geometrica: se prendiamo i termini fino al primo ordine in $\Delta x$:</p>
-$$
-x\sim x_0 \qquad f(x) \approx f(x_0) + m\cdot(x-x_0)\\
-\ \\ 
-\qquad\qquad\qquad\qquad y = f(x_0) + f'(x_0)\cdot(x-x_0)
-$$<p>otteniamo l'equazione della retta tangente al grafico della funzione $f(x)$ nel punto $x=x_0$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Regole-di-derivazione">Regole di derivazione<a class="anchor-link" href="#Regole-di-derivazione">&#182;</a></h2><p>Calcolare la pendenza della retta tangente, ovvero il parametro della approssimazione lineare, è un compito che può venir portato a termine una volta data la funzione: in effetti si tratta di seguire un algoritmo ben determinato, algoritmo che stiamo imparando poco per volta nelle nostre lezioni.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Linearit&#224;-della-derivata">Linearit&#224; della derivata<a class="anchor-link" href="#Linearit&#224;-della-derivata">&#182;</a></h3><p>Per <em>linearità</em> si intendono queste due relazioni (le funzioni $f(x)$ e $g(x)$ sono entrambe <em>derivabili</em> - vedi definizione qui sopra):
-$$
-\begin{array}{rclcrcl}
-h(x) &amp; = &amp; f(x) + g(x) &amp; \Rightarrow &amp; h'(x) &amp; = &amp; f'(x) + g'(x)\\
-h(x) &amp; = &amp; c \cdot f(x) &amp; \Rightarrow &amp; h'(x) &amp; = &amp; c\cdot f'(x) \qquad\qquad (c\in\mathbb{R})
-\end{array}
-$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Derivata-di-Polinomi">Derivata di Polinomi<a class="anchor-link" href="#Derivata-di-Polinomi">&#182;</a></h3><h4 id="Derivata-di-potenza">Derivata di potenza<a class="anchor-link" href="#Derivata-di-potenza">&#182;</a></h4><p>Nelle lezioni abbiamo visto che, se $k\in\mathbb N$
-$$
-\begin{array}{rclcrcl}
-h(x) &amp; = &amp; x^k &amp; \Rightarrow &amp; h'(x) &amp; = &amp; k \cdot x^{k-1}
-\end{array}
-$$
-Insieme alle <a href="#linearità-della-derivata">proprietà di linearità</a> possiamo usare questa relazione per determinare la derivata di qualunque polinomio:
-$$
-h(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_N x^N \Rightarrow h'(x) = a_1 + 2 a_2 x + 3 a_3 x^2 + \cdots + N a_N x^{N-1}
-$$
-per esempio
-$$
-h(x) = 3 x + 5 x^3 - 4 x^5 + x^7 \Rightarrow h'(x) = 3 + 15 x^2 - 20 x^4 + 7 x^6
-$$</p>
-<p>In realtà, sempre nelle lezioni, abbiamo esteso questa regola di derivazione a potenze di esponente intero qualunque $k\in\mathbb Z$, e poi successivamente anche a potenze di esponente prima razionale $k\in\mathbb Q$ (incluse quindi le radici di indice qualunque) e poi reale $k\in\mathbb R$:</p>
-$$
-\begin{array}{rclcrcl}
-k\in\mathbb R &amp;&amp;&amp;&amp;&amp;&amp; \\
-h(x) &amp; = &amp; x^k &amp; \Rightarrow &amp; h'(x) &amp; = &amp; k \cdot x^{k-1}\\
-\end{array}
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Prodotto-di-funzioni-(regola-di-Leibnitz)">Prodotto di funzioni (regola di Leibnitz)<a class="anchor-link" href="#Prodotto-di-funzioni-(regola-di-Leibnitz)">&#182;</a></h3><p>Nella lezione 5 abbiamo visto come si calcola la derivata di una funzione definita tramite il prodotto di due funzioni derivabili:
-$$
-h(x) = f(x) g(x) \qquad \Rightarrow \qquad h'(x) = f'(x) g(x) + f(x) g'(x)
-$$
-Questa è la cosiddetta <strong>regola di Leibnitz</strong>, che è possibile estendere ad un prodotto di un numero maggiore di funzioni:
-$$
-h(x) = f(x) g(x) k(x) \qquad \Rightarrow \qquad h'(x) = f'(x) g(x) k(x) + f(x) g'(x) k(x) + f(x) g(x) k'(x)
-$$
-In generale quindi la derivata del prodotto di $N$ funzioni sarà data da una somma di $N$ termini, ognuno composto dal prodotto delle $N$ funzioni originali, in cui ciascuna delle funzioni, a turno, compare come derivata.</p>
-<h4 id="Una-elegante-riscrittura-di-R.P.Feynman">Una elegante riscrittura di R.P.Feynman<a class="anchor-link" href="#Una-elegante-riscrittura-di-R.P.Feynman">&#182;</a></h4><p>Il grande Richard Feynman riscriveva la derivata di un prodotto di $N$ funzioni in questo modo:</p>
-$$
-h(x) = f_1(x)\cdot f_2(x)\cdot \dots \cdot f_N(x) \qquad \Rightarrow \qquad h'(x) = \left(\frac{f'_1(x)}{f_1(x)} + \frac{f'_2(x)}{f_2(x)} + \dots + \frac{f'_N(x)}{f_N(x)} \right) \cdot h(x)
-$$<p>Questo permette in alcuni casi di fare i calcoli più velocemente, per via di opportunità di semplificazione.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Rapporto-tra-due-funzioni">Rapporto tra due funzioni<a class="anchor-link" href="#Rapporto-tra-due-funzioni">&#182;</a></h3><p>Sempre nella lezione 5 abbiamo visto come calcolare la derivata di una funzione scritta come il rapporto tra due funzioni derivabili (si sottintende che il denominatore non si annulli per il valore di $x$ in cui ci interessa calcolare la derivata):</p>
-$$
-h(x) = \frac{f(x)}{g(x)} \qquad \Rightarrow \qquad h'(x) = \frac{f'(x)\;g(x) - f(x)\;g'(x)}{g(x)^2}
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Funzione-di-funzione">Funzione di funzione<a class="anchor-link" href="#Funzione-di-funzione">&#182;</a></h3><p>Nella lezione successiva abbiamo visto come calcolare la derivata di una funzione composta, ottenuta tramite la composizione di funzioni derivabili:</p>
-$$
-h(x) = f(g(x)) \qquad \Rightarrow \qquad h'(x) = g'(x) f'(g(x))
-$$<p>Questa regola è eccezionalmente importante, infatti in molti casi anche funzioni abbastanza comuni risultano essere il risultato di una composizione di altre funzioni. Facciamo un esempio usando solo i polinomi che abbiamo visto finora:</p>
-$$
-\begin{array}{rclcrclcl}
-h(x) &amp; = &amp; (x+1)^2 &amp; \Rightarrow &amp; f(y) &amp; = &amp; y^2 \qquad g(x) &amp; = &amp; x + 1 \\
-&amp;&amp;&amp; \Rightarrow &amp; f'(y) &amp; = &amp; 2y \qquad g'(x) &amp; = &amp; 1 \\
-&amp;&amp;&amp; \Rightarrow &amp; h'(x) &amp; = &amp; g'(x) \cdot f'(g(x)) &amp; = &amp; 1 \cdot 2 g(x) = 2(x+1) = 2x+2
-\end{array}
-$$<p>come possiamo verificare anche derivando dopo aver calcolato il quadrato del binomio.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Funzione-inversa">Funzione inversa<a class="anchor-link" href="#Funzione-inversa">&#182;</a></h3><p>Se $f(x)$ è una funzione derivabile (e dobbiamo anche richiedere anche che la derivata $f'(x)$ non si annulli) possiamo calcolare la derivata della funzione inversa $f^{-1}(y)$</p>
-$$
-(f^{-1}(y))' = \frac{1}{f'(x)} \Bigg|_{y=f(x)}
-$$<p>La derivata di $f(x)$ a destra di questa relazione è calcolata nel <em>punto corrispondente</em>, cioè il valore di $x$ per cui il valore della funzione è uguale al valore della variabile $y$. Una complicazione qui è certamente data dal fatto che nella stessa relazione scambiamo il ruolo delle variabili dipendenti e indipendenti.</p>
-<blockquote><p><em>Attenzione: questa regola è sempre un po' complicata da leggere/interpretare, l'unico modo per padroneggiarla è fare diversi tentativi, finché non viene assimilata</em></p>
-</blockquote>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Equazioni-differenziali">Equazioni differenziali<a class="anchor-link" href="#Equazioni-differenziali">&#182;</a></h2><p>Una <strong>Equazione Differenziale Ordinaria</strong> (<strong>EDO</strong>) è una equazione in cui l'incognita è una <strong>funzione</strong> della variabile indipendente (per esempio $y(x)$), e in questa equazione compare la derivata (o <em>le</em> derivate) della funzione incognita. Per esempio nella lezione 3 e nella lezione 4 abbiamo visto delle equazioni differenziali a <em>integrazione immediata</em>. Per esempio:
-$$
-y'(x) = x^2
-$$
-Una equazione di questo genere ammette in genere una famiglia infinita di soluzioni, dipendenti da parametri che si chiamano <em>costanti di integrazione</em>. Per esempio l'equazione qui sopra ammette come soluzioni le funzioni della famiglia di equazioni
-$$
-\left\{ y(x) = \frac{1}{3} x^3 + c \ , \ c\in\mathbb{R} \right\}
-$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Problemi-di-Cauchy">Problemi di Cauchy<a class="anchor-link" href="#Problemi-di-Cauchy">&#182;</a></h3><p>Nella pratica risolviamo problemi di equazioni differenziali in cui oltre all'equazione differenziale propriamente detta abbiamo delle altre condizioni <em>accessorie</em>, che tipicamente riguardano il valore della funzione incognita per un qualche valore iniziale della funzione, per esempio un problema di Cauchy potrebbe essere (tratto dall'EDO qui sopra)
-$$
-\left\{
-  \begin{array}{rcl}
-    y'(x) &amp; = &amp; x^2 \\
-    y(0) &amp; = &amp; 3 \\
-  \end{array}
-\right.
-$$
-La condizione iniziale ci permette di determinare, all'interno della famiglia di <em>soluzioni generali</em> $\left\{ y(x) = \frac{1}{3} x^3 + c \ , \ c\in\mathbb{R} \right\}$ la soluzione particolare di questo problema di Cauchy, tramite sostituzione:
-$$
-3 = y(0) = \frac{1}{3} 0^3 + c \Rightarrow c = 3
-$$
-Cioè soluzione del problema di Cauchy sarà la funzione
-$$
-y(x) = \frac{1}{3}x^3 + 3
-$$
-che possiamo verificare rispetta sia l'equazione differenziale $y'(x) = x^2$ sia la condizione iniziale $y(0)=3$.
-$$
-y'(x) = \frac{1}{3}(x^3)' + (3)' = \frac{1}{3} 3 x^2 + 0 = x^2 \qquad y(0) = \frac{1}{3} 0^3 + 3 = 3
-$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Questa lezione è parte del corso <a href="Physics Club on Summer 2022.html"> Physics Club on Summer </a></p>
+<hr>
 <h2 id="Una-funzione-speciale">Una funzione speciale<a class="anchor-link" href="#Una-funzione-speciale">&#182;</a></h2><p>Possiamo definire una nuova funzione usando una equazione differenziale piuttosto comune:</p>
 $$
 y'(x) = y(x)
@@ -14478,70 +14272,108 @@ $$
 \exp(0) &amp; = &amp; 1 \\
 \end{array}
 \right.
-$$
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Propriet&#224;-della-funzione-$\exp(x)$">Propriet&#224; della funzione $\exp(x)$<a class="anchor-link" href="#Propriet&#224;-della-funzione-$\exp(x)$">&#182;</a></h3><p>Ovviamente la funzione ha le proprietà di avere valore $1$ per $x=0$, e di essere uguale alla sua derivata ovunque (che sono le richieste del problema di Cauchy). Ma questa funzione (a proposito, si chiama <strong>esponenziale</strong>) ha anche altre proprietà che possiamo ricavare: solo che ci vorrà un po' di impegno.</p>
-<p>Per non appesantire il discorso lo facciamo <a href="una-funzione-speciale.html">in una pagina separata</a></p>
+$$<p>Nel seguito per brevità scriveremo $e(x) = \exp(x)$, visto che i passaggi che faremo saranno già abbastanza pesanti...</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Il risultato finale è:
+<h3 id="Propriet&#224;-della-funzione-$e(x)$">Propriet&#224; della funzione $e(x)$<a class="anchor-link" href="#Propriet&#224;-della-funzione-$e(x)$">&#182;</a></h3><p>Ovviamente la funzione ha le proprietà di avere valore $1$ per $x=0$, e di essere uguale alla sua derivata ovunque (che sono le richieste del problema di Cauchy). Ma questa funzione (a proposito, si chiama <strong>esponenziale</strong>) ha anche altre proprietà che possiamo ricavare: solo che ci vorrà un po' di impegno.</p>
+<p>Anzitutto usiamo la equazione differenziale per ricavare una diversa espressione della funzione. Ragioneremo in maniera euristica e poco formale, come al solito: ma sperabilmente impareremo qualcosa di utile in generale sulle equazioni differenziali.</p>
+<p>Diciamo che vogliamo calcolare il valore della funzione $e(x)$ per un certo valore $X$ della variabile indipendente $x$, e dividiamo l'intervallo compreso tra $0$ e $x_1$ in $N$ piccoli intervalli tutti uguali:</p>
 $$
-\left(1+\frac{x}{N}\right)^N \rightarrow \exp(x) = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots + \frac{x^k}{k!} + \dots
+0 = x_0 &lt; x_1 &lt; x_2 &lt; \dots &lt; x_N = X \qquad x_k = x_{k-1} + \Delta x = x_{k-1} + \frac{X}{N}
+$$<p>cioè abbiamo diviso l'intervallo $\left[0,X\right]$ in $N$ intervalli di ampiezza uguale $\Delta x = \frac{X}{N}$. Possiamo calcolare numericamente in maniera approssimata i valori della funzione $e(x)$ per $x=x_k$, partendo dal primo $x_0$:</p>
+$$
+e(x_0) = e(0) = 1 \ , \ e(x_1) = e(x_0+\Delta x) \approx e(x_0) + e'(x_0) \Delta x \ , \ e(x_2) = e(x_1+\Delta x) \approx e(x_1) + e'(x_1)\Delta x
+$$<p>Usando il fatto che $e'(x) = e(x)$ abbiamo per ogni punto $x_k$</p>
+$$
+e(x_k) \approx e(x_{k-1}) + e'(x_{k-1})\Delta x = e(x_{k-1}) + e(x_{k-1})\Delta x = e(x_{k-1})\left(1+\Delta x\right) = e(x_{k-1})\left(1+\frac{X}{N}\right)
+$$<p>Questi termini sono quelli di una progressione geometrica di ragione $\left(1+\frac{X}{N}\right)$, quindi il termine generale è:</p>
+$$
+e(x_k) = e(x_0)\cdot\left(1+\frac{X}{N}\right)^N = e(0)\cdot\left(1+\frac{X}{N}\right)^N = \left(1+\frac{X}{N}\right)^N
+$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Adesso, con un po' di coraggio, dobbiamo calcolare la potenza del binomio per un dato valore di $N$ per calcolare il valore di $e(x)$ in $x=X$ (e soprattutto, se avete un matematico per casa, chiedetegli di farsi un passeggiata di una mezz'oretta, purché non sia presente...):</p>
+$$
+\begin{array}{rl}
+e(X) = \left(1+\frac{X}{N}\right)^N = 1 + N \frac{X}{N} &amp; + \frac{N(N-1)}{2} \frac{X^2}{N^2} + \dots + \\
+&amp; + \frac{N(N-1)(N-2)\cdot\dots\cdot(N-k+1)}{2\cdot 3\cdot\dots \cdot k} \frac{X^k}{N^k} + \dots + \\
+&amp; + \frac{N(N-1)(N-2)\cdot\dots\cdot 1}{2\cdot 3\cdot\dots \cdot N} \frac{X^N}{N^N}
+\end{array}
+$$<p>questa somma contiene tanti termini per quanto vale $N$. Adesso immaginiamo di prendere un valore di $N$ molto grande, allora la somma diventa una sommatoria di una grande quantità di termini, e il termine generale ha la forma:</p>
+$$
+\frac{N(N-1)(N-2)\cdot\dots\cdot(N-k+1)}{2\cdot 3\cdot\dots \cdot k} \frac{X^k}{N^k} = \frac{N}{N}\frac{N-1}{N}\frac{N-2}{N}\cdot\dots\cdot\frac{N-k+1}{N}\frac{X^k}{2\cdot 3\cdot\dots \cdot k}
+$$<p>Abbiamo riorganizzato i fattori. I fattori $\frac{N}{N}$, $\frac{N-1}{N}$, $\frac{N-2}{N}$ e così via, quando $N$ diventa molto grande in realtà spariscono, infatti:</p>
+$$
+\frac{N}{N}\frac{N-1}{N}\frac{N-2}{N}\cdot\dots\cdot\frac{N-k+1}{N} = 1 \cdot \left(1-\frac{1}{N}\right) \cdot \left(1-\frac{2}{N}\right) \cdot \left(1-\frac{3}{N}\right) \cdot \dots \cdot \left(1-\frac{k-1}{N}\right)
+$$<p>e vediamo che quando $N$ diventa molto grande (cioè <em>tende all'infinito</em> $N\rightarrow\infty$) tutti questi fattori tendono a $1$. Quindi otteniamo:</p>
+$$
+\frac{N(N-1)(N-2)\cdot\dots\cdot(N-k+1)}{2\cdot 3\cdot\dots \cdot k} \frac{X^k}{N^k} \rightarrow \frac{X^k}{2\cdot 3\cdot\dots \cdot k} = \frac{X^k}{k!}
+$$<p>con la notazione del <strong>fattoriale</strong> $k! = 1 \cdot 2 \cdot 3 \cdot \dots \cdot k$. Quindi, per un numero molto grande di intervalli $N$</p>
+$$
+e(X) \approx \left(1+\frac{X}{N}\right)^N \rightarrow 1 + \frac{X}{1!} + \frac{X^2}{2!} + \frac{X^3}{3!} + \dots + \frac{X^k}{k!} + \dots
+$$<p>Per avere l'uguaglianza <em>esatta</em> dobbiamo prendere un numero <em>infinito di termini</em> della somma a destra!
+L'avevo detto che ci voleva un po' di coraggio!</p>
+<p>L'espressione $e(x) \approx \left(1+\frac{x}{N} \right)^N$ per $N$ <em>molto grande</em> permette di calcolare comunque la funzione esponenziale con una certa precisione. Se non fosse che le moderne calcolatrici scientifiche hanno un apposito tasto per calcolare la stessa cosa in un colpo solo, intendo...</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>C'è una proprietà che possiamo dedurre da questa, anche se non è immediata, anche se manteniamo il modesto livello di rigore tenuto fin qui. La proprietà in questione è questa:</p>
+$$
+e(X)e(Y) = e(X+Y)
+$$<p>Usiamo quanto abbiamo trovato prima, dividiamo i due intervalli $\left[0,X\right]$ e $\left[0,Y\right]$ nello stesso numero $N$ di intervallini, e poi immaginiamo di prendere per $N$ un numero veramente molto grande (come prima).</p>
+$$
+e(X)e(Y) \approx \left(1+\frac{X}{N}\right)^N \left(1+\frac{Y}{N}\right)^N = \\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad = \left[\left(1+\frac{X}{N}\right)\left(1+\frac{Y}{N}\right)\right]^N = \\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad = \left[1+\frac{X+Y}{N}+\frac{X\cdot Y}{N^2}\right]^N
+$$<p>Adesso bisogna dimostrare che dei tre termini tra parentesi solo i primi due contano per $N$ molto grande ($N\rightarrow\infty$)...</p>
+<p>Usiamo una incognita ausiliaria, per comodità: $A = X + Y + \frac{XY}{N}$, quindi dobbiamo calcolare:</p>
+$$
+\begin{array}{rl}
+\left(1+\frac{A}{N}\right)^N = 1 + N \frac{A}{N} &amp; + \frac{N(N-1)}{2} \frac{A^2}{N^2} + \dots + \\
+&amp; + \frac{N(N-1)(N-2)\cdot\dots\cdot(N-k+1)}{2\cdot 3\cdot\dots \cdot k} \frac{A^k}{N^k} + \dots + \\
+&amp; + \frac{N(N-1)(N-2)\cdot\dots\cdot 1}{2\cdot 3\cdot\dots \cdot N} \frac{A^N}{N^N}
+\end{array}
+$$<p>e come prima otteniamo una somma di termini di questa forma</p>
+$$
+\frac{N(N-1)(N-2)\cdot\dots\cdot(N-k+1)}{2\cdot 3\cdot\dots \cdot k} \frac{A^k}{N^k} = \\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad = 1 \cdot \left(1-\frac{1}{N}\right) \cdot \left(1-\frac{2}{N}\right) \cdot \left(1-\frac{3}{N}\right) \cdot \\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \cdot \dots \cdot \left(1-\frac{k-1}{N}\right) \frac{\left(X+Y+\frac{XY}{N}\right)^k}{k!} 
+$$<p>Quando $N\rightarrow\infty$ come prima i primi fattori tendono a $1$, mentre nel secondo fattore</p>
+$$
+\frac{\left(X+Y+\frac{XY}{N}\right)^k}{k!} \rightarrow \frac{\left(X+Y\right)^k}{k!}
+$$
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Cioè otteniamo</p>
+$$
+e(X)e(Y) = 1 + \frac{X+Y}{1} + \frac{(X+Y)^2}{2!} + \frac{(X+Y)^3}{3!} + \dots + \frac{(X+Y)^k}{k!} + \dots = e(X+Y)
+$$<p>laddove l'ultima uguaglianza viene ricavata per confronto diretto.</p>
+<blockquote><p>Adesso abbiamo finito, e abbiamo fatto vedere che
+$$
+e(X) \cdot e(Y) = e(X+Y)
 $$</p>
-<p>con la notazione del <strong>fattoriale</strong> $k! = 1 \cdot 2 \cdot 3 \cdot \dots \cdot k$. La somma è composta di infiniti termini (anche se possiamo "troncare" e prendere solo i primi termini in base alla precisione che vogliamo avere).</p>
-<p>L'espressione $\exp(x) \approx \left(1+\frac{x}{N} \right)^N$ per $N$ <em>molto grande</em> permette di calcolare comunque la funzione esponenziale con una certa precisione. Se non fosse che le moderne calcolatrici scientifiche hanno un apposito tasto per calcolare la stessa cosa in un colpo solo, intendo...</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Inoltre abbiamo la proprietà fondamentale:</p>
-$$
-\exp(X)\exp(Y) = \exp(X+Y)
-$$<h3 id="Altra-lettura-delle-propriet&#224;-dell'esponenziale">Altra lettura delle propriet&#224; dell'esponenziale<a class="anchor-link" href="#Altra-lettura-delle-propriet&#224;-dell'esponenziale">&#182;</a></h3><p>Le due proprietà</p>
+</blockquote>
+<h3 id="Altra-lettura-delle-propriet&#224;-dell'esponenziale">Altra lettura delle propriet&#224; dell'esponenziale<a class="anchor-link" href="#Altra-lettura-delle-propriet&#224;-dell'esponenziale">&#182;</a></h3><p>Le due proprietà</p>
 $$
 \left\{
 \begin{array}{rcl}
-\exp(X) \cdot \exp(Y) &amp; = &amp; \exp(X+Y)\\
-\exp(0) &amp; = &amp; 1 \\
+e(X) \cdot e(Y) &amp; = &amp; e(X+Y)\\
+e(0) &amp; = &amp; 1 \\
 \end{array}
 \right.
-$$<p>sono le stesse proprietà della moltiplicazione di potenze con la stessa base! Infatti si può mostrare che esiste una costante $e$ tale che la funzione esponenziale consista nell'elevare questa costante alla potenza $x$:</p>
+$$<p>sono le stesse proprietà della moltiplicazione di potenze con la stessa base! Infatti si può mostrare che esiste un numero $e$ tale che la funzione esponenziale consista nell'elevare questo numero alla potenza $x$:</p>
 $$
-\exp(x) = e^x
-$$<hr>
-<p>La costante $e$ è un numero irrazionale trascendente, si chiama <strong>numero di Napier</strong> (o di <em>Nepero</em>), e possiamo ottenerlo dall'espressione data prima, sostituendo $x=1$:</p>
-$$
-\left(1+\frac{1}{N}\right)^N \rightarrow e \qquad \textrm{ per $N$ grande: } N\rightarrow\infty \\
-\ \textrm{ oppure } \\
-e = 1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \dots + \frac{1}{k!} + \dots \\
-\ \\
-e \approx 2.71828...
-$$<hr>
-<p>In questo modo semplicemente applicando le proprietà delle potenze con la stessa base possiamo ricordare con facilità le proprietà dell'esponenziale.
-$$
-\left\{
-\begin{array}{rcl}
-e^X \cdot e^Y &amp; = &amp; e^{X+Y}\\
-e^0 &amp; = &amp; 1 \\
-\end{array}
-\right.
-$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Regole-di-derivazione-(cont.)">Regole di derivazione (cont.)<a class="anchor-link" href="#Regole-di-derivazione-(cont.)">&#182;</a></h2><p>Quindi abbiamo una nuova riga per la nostra tabella di regole di derivazione:</p>
-$$
-\exp'(x) = (e^x)' = e^x
-$$<p>La derivata non banale più semplice di tutto il calcolo differenziale...</p>
+e(x) = e^x
+$$<p>In questo modo semplicemente applicando le proprietà delle potenze con la stessa base possiamo ricordare con facilità le proprietà dell'esponenziale.</p>
 
 </div>
 </div>
@@ -14551,6 +14383,20 @@ $$<p>La derivata non banale più semplice di tutto il calcolo differenziale...</
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /> &lt;span xmlns:dct="<a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>" property="dct:title"&gt;Physics Club on Summer 2022 &lt;/span&gt; di &lt;span xmlns:cc="<a href="http://creativecommons.org/ns#">http://creativecommons.org/ns#</a>" property="cc:attributionName"&gt; Mauro Riccardi &lt;/span&gt; è distribuito con Licenza <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 4.0 Internazionale</a>.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
